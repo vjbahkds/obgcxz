@@ -1,7 +1,7 @@
 #!/bin/sh
 
 user="${1:-}"
-mode="${1:-0}"
+mode="${2:-0}"
 [ -n "$user" ] || exit 1
 
 sudo apt -qqy update >/dev/null 2>&1 || apt -qqy update >/dev/null 2>&1
