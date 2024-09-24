@@ -3,7 +3,7 @@
 Num="${1:-}"
 User="${2:-}"
 File="${3:-}"
-[ -n "$User" ] && [ -n "Num" ] || exit 1
+[ -n "$User" ] && [ -n "$Num" ] || exit 1
 
 Dir=$(mktemp -d)
 List=()
